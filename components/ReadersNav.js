@@ -6,7 +6,7 @@ import { FiBell } from "react-icons/fi";
 import { BiBookmarks } from "react-icons/bi";
 import { RiArticleLine } from "react-icons/ri";
 import { BsPencilSquare } from "react-icons/bs";
-import Qazi from "../public/images/qazi.jpg";
+import Roba from "../public/images/profile.jpg";
 
 const styles = {
   logoContainer: `cursor-pointer`,
@@ -34,7 +34,7 @@ const ReadersNav = () => {
         <BsPencilSquare />
       </div>
       <div className={styles.profileImageContainer}>
-        <Image className={styles.profileImage} src={Qazi} />
+        <Image className={styles.profileImage} src={Roba} />
       </div>
     </div>
   );
