@@ -4,7 +4,7 @@ import Logo from "./../public/images/banner.png";
 const styles = {
   accentedButton: "bg-black text-white py-2 px-4 rounded-full",
   content: `max-w-7xl flex-1 flex items-center justify-between`,
-  wrapper: `h-max-[10rem] flex items-center justify-center bg-[#FCC017] border-y border-black`,
+  wrapper: `h-max-[10rem] flex items-center justify-center bg-[#FCC017] border-y border-black pb-7`,
 };
 
 const Banner = () => {
