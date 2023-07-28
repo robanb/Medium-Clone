@@ -14,10 +14,21 @@ const styles = {
   searchInput: `border-none outline-none bg-none w-full`,
   authorContainer: `my-[2rem]`,
   authorProfileImageContainer: `h-[5rem] w-[5rem] rounded-full overflow-hidden`,
-  authorName: ``,
+  authorName: `font-semibold mb-[.2rem] mt-[1rem]`,
+  authorFollowing: `text-[#787878]`,
+  authorActions: `flex gap-[.6rem] my-[1rem]  `,
+  actionButton: `bg-[#1A8917] text-white rounded-full px-[.6rem] py-[.4rem] text-sm `,
+  recommendationAuthorProfileImageContainer: `rounded-full overflow-hidden h-[1.4rem] w-[1.4rem] `,
+  recommendationAuthorContainer: `flex items-center gap-[.6rem]`,
+  recommendationAuthorName: `text-sm font-semibold`,
+  recommendationTitle: `font-bold`,
+  recommendationThumbnailContainer: `flex flex-1 items-center justify-center h-[4rem] w-[4rem]`,
+  recommendationThumbnail: `object-cover `,
+  articlesContainerWrapper: `flex items-center justify-between cursor-pointer my-[1rem]`,
+  articleContent: `flex-[4]`,
 };
 
-const Recommendations = () => {
+const Recommendations = ({ author }) => {
   return (
     <div className={styles.wrapper}>
       <div className={styles.accentedButton}>Get Unlimited access</div>
@@ -34,9 +45,50 @@ const Recommendations = () => {
           <Image src={Roba} alt="author" width={100} height={100} />
         </div>
         <div className={styles.authorName}>Roba Eths</div>
+        <div className={styles.authorFollowing}>1M followers</div>
+        <div className={styles.authorActions}>
+          <div className={styles.actionButton}>Follow</div>
+          <div className={styles.actionButton}>
+            <MdMarkEmailUnread />
+          </div>
+        </div>
+      </div>
+      <div className={styles.recommendationContainer}>
+        <div className={styles.title}>More from Medium</div>
+        <div className={styles.articlesContainer}>
+          <div className={styles.articlesContainerWrapper}>
+            <div className={styles.articleContent}>
+              <div className={styles.recommendationAuthorContainer}>
+                <div
+                  className={styles.recommendationAuthorProfileImageContainer}
+                >
+                  <Image
+                    src={Roba}
+                    alt="author profile"
+                    height={100}
+                    width={100}
+                  />
+                </div>
+                <div className={styles.recommendationAuthorName}>Roba Eths</div>
+              </div>
+              <div className={styles.recommendationTitle}>
+                The Ultimate Guide to JavaScript Algorithms and Data Structures
+                in 2023
+              </div>
+            </div>
+            <div className={styles.recommendationThumbnailContainer}>
+              <Image
+                className={styles.recommendationThumbnail}
+                src={JSLogo}
+                alt="author profile"
+                height={100}
+                width={100}
+              />
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-    
   );
 };
 export default Recommendations;
