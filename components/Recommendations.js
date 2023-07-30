@@ -56,39 +56,67 @@ const Recommendations = ({ author }) => {
       <div className={styles.recommendationContainer}>
         <div className={styles.title}>More from Medium</div>
         <div className={styles.articlesContainer}>
-          <div className={styles.articlesContainerWrapper}>
-            <div className={styles.articleContent}>
-              <div className={styles.recommendationAuthorContainer}>
-                <div
-                  className={styles.recommendationAuthorProfileImageContainer}
-                >
-                  <Image
-                    src={Roba}
-                    alt="author profile"
-                    height={100}
-                    width={100}
-                  />
+          {recommedatedPosts.map((post) => (
+            <div className={styles.articlesContainerWrapper}>
+              <div className={styles.articleContent}>
+                <div className={styles.recommendationAuthorContainer}>
+                  <div
+                    className={styles.recommendationAuthorProfileImageContainer}
+                  >
+                    <Image
+                      src={post.author.image}
+                      alt="author profile"
+                      height={100}
+                      width={100}
+                    />
+                  </div>
+                  <div className={styles.recommendationAuthorName}>
+                    {post.author.name}
+                  </div>
                 </div>
-                <div className={styles.recommendationAuthorName}>Roba Eths</div>
+                <div className={styles.recommendationTitle}>{post.title}</div>
               </div>
-              <div className={styles.recommendationTitle}>
-                The Ultimate Guide to JavaScript Algorithms and Data Structures
-                in 2023
+              <div className={styles.recommendationThumbnailContainer}>
+                <Image
+                  className={styles.recommendationThumbnail}
+                  src={post.image}
+                  alt="author profile"
+                  height={100}
+                  width={100}
+                />
               </div>
             </div>
-            <div className={styles.recommendationThumbnailContainer}>
-              <Image
-                className={styles.recommendationThumbnail}
-                src={JSLogo}
-                alt="author profile"
-                height={100}
-                width={100}
-              />
-            </div>
-          </div>
+          ))}
         </div>
       </div>
     </div>
   );
 };
 export default Recommendations;
+
+const recommedatedPosts = [
+  {
+    title: "what can we do with repllit?",
+    image: ReplitLogo,
+    author: {
+      name: "Rafi Qazi",
+      image: CPLogo,
+    },
+  },
+  {
+    title: "The ultimate JavaScript Developer Guide",
+    image: TutorialImg,
+    author: {
+      name: "Roba Eths",
+      image: Roba,
+    },
+  },
+  {
+    title: "How to become a developer in 2023",
+    image: JSLogo,
+    author: {
+      name: "Roba Eths",
+      image: Roba,
+    },
+  },
+];
